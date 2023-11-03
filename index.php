@@ -20,6 +20,16 @@ if(isset($_POST['Deposit']))
 //end access token
   $amount = $_POST['amount'];
   $phone = $_POST['accountnumber'];
+  //checking user input
+  $f3d = substr($phone, 0, 3);
+  if($f3d == '254')
+  {
+    $phone = $phone;
+  }
+  else
+  {
+    $phone = '254'.(int)$phone ;
+  }
 //start stk push
   date_default_timezone_set('Africa/Nairobi');
   $processrequestUrl = 'get your process url';
